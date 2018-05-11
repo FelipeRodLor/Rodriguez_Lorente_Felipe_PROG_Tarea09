@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.vista.iugrafica.ControladorDatosAlquiler">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="349.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="328.0" prefWidth="128.0" spacing="15.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="65.0" text="MARCA:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="MODELO:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER_RIGHT" text="MATRICULA:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER_RIGHT" text="TIPO DE VEHUICULO:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" text="NOMBRE CLIENTE:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="107.0" text="NIF:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="107.0" text="FECHA ALQUILER:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="119.0" text="CERRADO;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="119.0" text="DIAS DE ALQUILER;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="119.0" text="PRECIO:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="360.0" prefWidth="225.0" spacing="15.0">
+               <children>
+                  <Label fx:id="lbMarca" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin></Label>
+                  <Label fx:id="lbModelo" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin></Label>
+                  <Label fx:id="lbMatricula" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin></Label>
+                  <Label fx:id="lbTipoVehiculo" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbNombre" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin></Label>
+                  <Label fx:id="lbNif" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin></Label>
+                  <Label fx:id="lbFecha" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbCerrado" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbDias" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbPrecio" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.vista.iugrafica.ControladorTablaAlquileresVehiculo">
+   <children>
+      <Label text="Listado de Alquileres" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="76.0" prefWidth="683.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="76.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Label text="Marca:" />
+                  <Label text="Modelo:" />
+                  <Label text="Matricula:" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="76.0" prefWidth="320.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lbMarca" prefHeight="17.0" prefWidth="331.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="lbModelo" prefHeight="17.0" prefWidth="295.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="lbMatricula" prefHeight="17.0" prefWidth="138.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView fx:id="tvAlquileresVehiculo" prefHeight="200.0" prefWidth="743.0">
+        <columns>
+            <TableColumn fx:id="tcNombre" prefWidth="221.0" text="Nombre" />
+            <TableColumn fx:id="tcNif" minWidth="0.0" prefWidth="147.0" text="NIF" />
+            <TableColumn fx:id="tcFecha" prefWidth="102.0" text="Fecha" />
+            <TableColumn fx:id="tcDias" minWidth="0.0" prefWidth="82.0" text="Dias Alquiler" />
+            <TableColumn fx:id="tcPrecio" prefWidth="90.0" text="Precio" />
+        </columns>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+</VBox>

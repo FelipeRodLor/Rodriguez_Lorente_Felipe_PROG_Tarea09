@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.12130177514792899" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="678.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.vista.iugrafica.ControladorVista">
+  <items>
+      <Label alignment="CENTER" prefHeight="139.0" prefWidth="551.0" text="Gestion de Alquileres" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Lucida Calligraphy Italic" size="47.0" />
+         </font>
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+      </Label>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Clientes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox fx:id="vbAccionesClientes" disable="true" layoutX="340.0" layoutY="253.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="btDetalle" mnemonicParsing="false" onAction="#mostrarDetalleCliente" prefHeight="25.0" prefWidth="114.0" text="Detalle" />
+                              <Button mnemonicParsing="false" onAction="#mostrarTablaAlquileresCliente" prefHeight="25.0" prefWidth="138.0" text="Alquileres" />
+                              <Button fx:id="btEliminarCliente" mnemonicParsing="false" onAction="#eliminarCliente" prefHeight="25.0" prefWidth="124.0" text="Eliminar">
+                                 <VBox.margin>
+                                    <Insets top="100.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <TableView fx:id="tvClientes" layoutX="47.0" layoutY="68.0" prefHeight="378.0" prefWidth="274.0">
+                          <columns>
+                            <TableColumn fx:id="tcNombre" prefWidth="199.0" text="Nombre" />
+                            <TableColumn fx:id="tcNif" prefWidth="74.0" text="NIF" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="47.0" layoutY="34.0" prefHeight="21.0" prefWidth="131.0" text="Listado de Clientes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="rbAnadirCliente" layoutX="340.0" layoutY="97.0" mnemonicParsing="false" onAction="#rbAnadirCliente" text="Añadir Cliente" />
+                        <HBox fx:id="hbAnadirCliente" disable="true" layoutX="585.0" layoutY="68.0" prefHeight="234.0" prefWidth="333.0" AnchorPane.rightAnchor="30.0">
+                           <children>
+                              <VBox alignment="TOP_RIGHT" prefHeight="358.0" prefWidth="79.0">
+                                 <children>
+                                    <Label fx:id="nombreC" text="Nombre">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="nifC" text="NIF">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="localidadC" text="Localidad">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="direccionC" text="Dirección">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="codigoPostalC" text="Código Postal" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox prefHeight="270.0" prefWidth="255.0">
+                                 <children>
+                                    <TextField fx:id="tfNombre" onKeyTyped="#compruebaNombre" prefHeight="25.0" prefWidth="164.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" top="2.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfNif" onKeyTyped="#compruebaNif" onRotationFinished="#compruebaNif" prefHeight="25.0" prefWidth="72.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="170.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfLocalidad" onKeyTyped="#compruebaLocalidad" prefHeight="25.0" prefWidth="186.0">
+                                       <VBox.margin>
+                                          <Insets bottom="14.0" left="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfDireccion" onKeyTyped="#compruebaDireccion">
+                                       <VBox.margin>
+                                          <Insets bottom="12.0" left="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfCodigoPostal" onKeyTyped="#compruebaCodigoPostal">
+                                       <VBox.margin>
+                                          <Insets left="5.0" right="200.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btCancelarC" mnemonicParsing="false" onAction="#cancelarAnadirCliente" prefHeight="25.0" prefWidth="64.0" text="Cancelar">
+                                             <HBox.margin>
+                                                <Insets top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btEjecutarC" mnemonicParsing="false" onAction="#ejecutarAnadirCliente" prefHeight="25.0" prefWidth="64.0" text="Ejecutar">
+                                             <HBox.margin>
+                                                <Insets left="120.0" top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button fx:id="btCerrar" layoutX="835.0" layoutY="451.0" mnemonicParsing="false" onAction="#cerrarAplicacion" prefHeight="25.0" prefWidth="55.0" text="Cerrar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Vehiculos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox fx:id="vbAccionesVehiculos" disable="true" layoutX="403.0" layoutY="253.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="btDetalleVehiculo" mnemonicParsing="false" onAction="#mostrarDetalleVehiculo" prefHeight="25.0" prefWidth="114.0" text="Detalle" />
+                              <Button mnemonicParsing="false" onAction="#mostrarTablaAlquileresVehiculo" prefHeight="25.0" prefWidth="138.0" text="Alquileres" />
+                              <Button fx:id="btEliminarVehiculo" mnemonicParsing="false" onAction="#eliminarVehiculo" prefHeight="25.0" prefWidth="124.0" text="Eliminar">
+                                 <VBox.margin>
+                                    <Insets top="100.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <TableView fx:id="tvVehiculos" layoutX="17.0" layoutY="73.0" prefHeight="378.0" prefWidth="365.0">
+                           <columns>
+                              <TableColumn fx:id="tcMarca" prefWidth="126.0" text="Marca" />
+                              <TableColumn fx:id="tcModelo" prefWidth="107.0" text="Modelo" />
+                              <TableColumn fx:id="tcMatricula" prefWidth="64.0" text="Matricula" />
+                              <TableColumn fx:id="tcDisponible" prefWidth="67.0" text="Disponible" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="17.0" layoutY="34.0" prefHeight="21.0" prefWidth="183.0" text="Listado de Vehiculos">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="rbAnadirVehiculo" layoutX="403.0" layoutY="93.0" mnemonicParsing="false" onAction="#rbAnadirVehiculo" text="Añadir Vehiculo" />
+                        <HBox fx:id="hbAnadirVehiculo" disable="true" layoutX="585.0" layoutY="68.0" prefHeight="295.0" prefWidth="333.0" AnchorPane.rightAnchor="30.0">
+                           <children>
+                              <VBox alignment="TOP_RIGHT" prefHeight="358.0" prefWidth="79.0">
+                                 <children>
+                                    <Label text="Marca">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Modelo">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Matricula">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Cilindrada">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Nº Plazas">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="163.0" text="PMA" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox prefHeight="262.0" prefWidth="255.0">
+                                 <children>
+                                    <TextField fx:id="tfMarca" onKeyTyped="#compruebaMarca" prefHeight="25.0" prefWidth="204.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="40.0" top="2.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfModelo" onKeyTyped="#compruebaModelo" prefHeight="25.0" prefWidth="69.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="40.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfMatricula" onKeyTyped="#compruebaMatricula" prefHeight="25.0" prefWidth="186.0">
+                                       <VBox.margin>
+                                          <Insets bottom="14.0" left="5.0" right="180.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfCilindrada" onKeyTyped="#compruebaCilindrada">
+                                       <VBox.margin>
+                                          <Insets bottom="12.0" left="5.0" right="205.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfNumeroPlazas" onKeyTyped="#compruebaNumeroPlazas">
+                                       <VBox.margin>
+                                          <Insets bottom="12.0" left="5.0" right="205.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfPMA" layoutX="15.0" layoutY="158.0" onKeyTyped="#compruebaPMA">
+                                       <VBox.margin>
+                                          <Insets left="5.0" right="205.0" top="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox fx:id="hbTipoVehiculo" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                       <children>
+                                          <RadioButton fx:id="rbTurismo" mnemonicParsing="false" prefHeight="16.0" prefWidth="73.0" text="Turismo" />
+                                          <RadioButton fx:id="rbAutobus" mnemonicParsing="false" text="Autobus" />
+                                          <RadioButton fx:id="rbDeCarga" mnemonicParsing="false" text="De Carga" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#cancelarAnadirVehiculo" prefHeight="25.0" prefWidth="64.0" text="Cancelar">
+                                             <HBox.margin>
+                                                <Insets top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#ejecutarAnadirVehiculo" prefHeight="25.0" prefWidth="64.0" text="Ejecutar">
+                                             <HBox.margin>
+                                                <Insets left="120.0" top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button fx:id="btCerrar" layoutX="835.0" layoutY="451.0" mnemonicParsing="false" onAction="#cerrarAplicacion" prefHeight="25.0" prefWidth="55.0" text="Cerrar" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabAlquileres" text="Alquileres">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox fx:id="vbAccionesAlquileres" layoutX="463.0" layoutY="251.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="btDetalleAlquiler" disable="true" mnemonicParsing="false" onAction="#mostrarDetalleAlquiler" prefHeight="25.0" prefWidth="114.0" text="Detalle" />
+                              <Button fx:id="btCerrarAlquiler" disable="true" mnemonicParsing="false" onAction="#cerrarAlquiler" prefHeight="25.0" prefWidth="124.0" text="Cerrar Alquiler">
+                                 <VBox.margin>
+                                    <Insets top="100.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <TableView fx:id="tvAlquileres" layoutX="47.0" layoutY="73.0" prefHeight="378.0" prefWidth="404.0">
+                           <columns>
+                              <TableColumn fx:id="tcNombreA" prefWidth="152.0" text="Nombre" />
+                              <TableColumn fx:id="tcNifA" prefWidth="72.0" text="NIF" />
+                              <TableColumn fx:id="tcMarcaA" prefWidth="88.0" text="Marca " />
+                              <TableColumn fx:id="tcMatriculaA" prefWidth="61.0" text="Matricula" />
+                              <TableColumn fx:id="tcAbiertoA" prefWidth="30.0" text="Dias" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="47.0" layoutY="34.0" prefHeight="21.0" prefWidth="146.0" text="Listado de Alquileres">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="rbAnadirAlquiler" layoutX="456.0" layoutY="104.0" mnemonicParsing="false" onAction="#rbAnadirAlquiler" text="Añadir Alquiler" />
+                        <Button fx:id="btCerrar" layoutX="835.0" layoutY="451.0" mnemonicParsing="false" onAction="#cerrarAplicacion" prefHeight="25.0" prefWidth="55.0" text="Cerrar" />
+                        <CheckBox fx:id="cbAlquileresAbiertos" layoutX="305.0" layoutY="47.0" mnemonicParsing="false" onAction="#listarAlquileresAbiertos" text="Solo alquileres Abiertos" />
+                        <HBox fx:id="hbAnadirAlquiler" disable="true" layoutX="625.0" layoutY="104.0" prefHeight="135.0" prefWidth="265.0">
+                           <children>
+                              <VBox alignment="TOP_RIGHT" prefHeight="358.0" prefWidth="79.0">
+                                 <children>
+                                    <Label text="Matricula">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="NIF">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox prefHeight="135.0" prefWidth="179.0">
+                                 <children>
+                                    <TextField fx:id="tfMatriculaAlquiler" onKeyTyped="#compruebaMatriculaAlquiler" prefHeight="25.0" prefWidth="140.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="90.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfNifAlquiler" onKeyTyped="#compruebaNifAlquiler">
+                                       <VBox.margin>
+                                          <Insets bottom="12.0" left="5.0" right="90.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btCancelarAbrirAlquiler" mnemonicParsing="false" onAction="#cancelarAnadirAlquiler" prefHeight="25.0" prefWidth="63.0" text="Cancelar">
+                                             <HBox.margin>
+                                                <Insets top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btEjecutarAlquiler" mnemonicParsing="false" onAction="#ejecutarAnadirAlquiler" prefHeight="25.0" prefWidth="63.0" text="Ejecutar">
+                                             <HBox.margin>
+                                                <Insets left="45.0" top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </items>
+</SplitPane>
